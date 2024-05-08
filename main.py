@@ -124,10 +124,13 @@ def main():
     header_col1, header_col2 = st.columns((0.8, 0.2))
     header_col1.title("Pyfolio Analyser")
 
-    if header_col2.button("Log in / Sign up") and get_user() == "not connected":
-        connect_user()
+    if get_user() == "not connected":
+        if header_col2.button("Log in / Sign up", type="primary"):
+            connect_user()
     else:
-        header_col2.button("LOg out")
+        if header_col2.button("Log ou_t", type="primary"):
+            conn.auth.sign_out()
+            st.rerun()
 
 
     col_sp, col_nasq, col_btc = st.columns((0.3,0.3,0.3))
