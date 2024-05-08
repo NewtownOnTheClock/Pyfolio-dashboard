@@ -94,17 +94,6 @@ def connect_user():
 #             st.rerun()
 
 
-def sign_in_frontend():
-    with st.sidebar:
-        with st.popover("Log In", use_container_width=True):
-            with st.form("Log In", clear_on_submit=True, border=False):
-                email = st.text_input("Email")
-                password = st.text_input("Password", type='password')
-
-                if st.form_submit_button("Log In"):
-                    sign_in(email=email, password=password)
-
-
 # def sidebar():
 #     st.sidebar.title("Pyfolio Analyser")
 #     col1, col2, col3 = st.columns((0.4,0.2,0.4))
